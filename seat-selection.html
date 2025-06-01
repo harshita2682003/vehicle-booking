@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Vehicle Booking Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center logo-col">
+                    <h1>
+                    <a href="index.html" class="flex items-center logo-image">
+                       <img src="assets/images/logo.png" alt="RideBook Logo">
+                    </a>
+                </h1>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-green-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Book Now Button (Desktop) -->
+                <div class="hidden lg:block">
+                    <a href="booking.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-colors">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation (Hidden by default) -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                    <a href="booking.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-colors text-center">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+ 
+    
+
+    <section class="bg-green-600 py-10 lg:py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 text-white">Select Your Seats</h2>
+                <p class="max-w-xl text-center text-white">
+                    Choose your preferred seats for maximum comfort during your journey.
+                </p>
+            </div>
+            
+            <!-- Booking Steps Progress -->
+            <div class="max-w-4xl mx-auto mt-5 lg:mt-10">
+                <div class="flex items-center justify-between booking-steps-progress">
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            1
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Search</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            2
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Select Vehicle</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            3
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Select Seats</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div id="step-4-circle" class="w-8 h-8 md:w-10 md:h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            4
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Payment</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div id="step-5-circle" class="w-8 h-8 md:w-10 md:h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            5
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Confirm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Seat Selection Section -->
+    <section class="py-10 lg:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <!-- Vehicle Info -->
+                <div class="bg-gray-50 rounded-xl p-4 md:p-6 mb-8">
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center mb-4 md:mb-0">
+                            <div class="w-14 h-14 md:w-16 md:h-16 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i id="vehicle-icon" class="fas fa-bus text-green-600 text-xl md:text-3xl"></i>
+                            </div>
+                            <div class="md:text-left text-center">
+                                <h2 id="selected-vehicle-name" class="text-xl md:text-2xl font-bold text-gray-900 mb-1">Luxury Bus</h2>
+                                <p id="vehicle-details" class="text-gray-600">40 Seats • Air Conditioned • WiFi</p>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <p class="text-gray-600 mb-1">Trip Date & Time:</p>
+                            <p id="trip-datetime" class="font-medium text-gray-900">Aug 10, 2023 at 10:00 AM</p>
+                            <p class="text-gray-600 mb-1 mt-2">Route:</p>
+                            <p id="trip-route" class="font-medium text-gray-900">New York City to Boston</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seat Map Legend -->
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 mb-4 lg:mb-8">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-md border border-gray-300 mr-2"></div>
+                        <span class="text-gray-600">Available</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-md bg-green-100 border border-green-500 text-green-600 flex items-center justify-center font-bold mr-2">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="text-gray-600">Selected</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-md bg-gray-200 text-gray-400 mr-2"></div>
+                        <span class="text-gray-600">Booked</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 md:w-8 md:h-8 rounded-md bg-gray-100 border border-gray-300 flex items-center justify-center text-gray-500 mr-2">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                        <span class="text-gray-600">Accessible</span>
+                    </div>
+                </div>
+                
+                <!-- Seat Selection Map -->
+                <div class="mb-8">
+                    <div class="bg-gray-50 rounded-xl p-6 overflow-x-auto">
+                        <!-- Bus Front -->
+                        <div class="flex justify-center mb-6">
+                            <div class="w-40 h-16 bg-gray-300 rounded-t-3xl flex items-center justify-center mb-2">
+                                <span class="text-gray-600 font-medium">Driver</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Bus Seats -->
+                        <div id="seat-map" class="grid grid-cols-5 gap-3 max-w-md mx-auto overflow-x-auto">
+                            <!-- Seats will be dynamically generated here -->
+                        </div>
+                        
+                        <!-- Bus Rear -->
+                        <div class="flex justify-center mt-8">
+                            <div class="w-40 h-10 bg-gray-300 rounded-b-lg flex items-center justify-center">
+                                <span class="text-gray-600 font-medium">Rear</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Selected Seats Summary -->
+                <div class="bg-white rounded-xl shadow-md p-4 md:p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Selected Seats</h3>
+                    
+                    <div id="no-seats-message" class="text-gray-600 italic mb-4">No seats selected yet. Please select at least one seat to continue.</div>
+                    
+                    <div id="selected-seats-container" class="hidden">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full border-collapse">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Seat No.</th>
+                                        <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Type</th>
+                                        <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Price</th>
+                                        <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="selected-seats-table">
+                                    <!-- Selected seats will be shown here -->
+                                </tbody>
+                                <tfoot class="border-t border-gray-200">
+                                    <tr>
+                                        <td colspan="2" class="py-3 px-4 text-right font-bold text-gray-900">Total:</td>
+                                        <td id="total-price" class="py-3 px-4 font-bold text-green-600">$0.00</td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-col sm:flex-row justify-between gap-4">
+                        <button onclick="window.location.href='booking.html'" class="btn btn-transparent rounded-full transition-all">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Vehicle Selection
+                        </button>
+                        
+                        <button id="proceed-to-payment" onclick="proceedToPayment()" class="btn transition-all rounded-full opacity-50 cursor-not-allowed" disabled>
+                            Proceed to Payment <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white pt-10 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 md:gap-8 mb-8 md:mb-10 lg:mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center mb-6 footer-logo-img">
+                        <img src="assets/images/footer-logo.png" alt="RideBook Logo">
+                    </a>
+                    <p class="text-gray-400 mb-4 lg:mb-6">
+                        Premium vehicle booking service with a wide range of options to match your needs.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="booking.html?vehicle-type=car" class="text-gray-400 hover:text-white transition-colors">Car Rental</a></li>
+                        <li><a href="booking.html?vehicle-type=bus" class="text-gray-400 hover:text-white transition-colors">Bus Booking</a></li>
+                        <li><a href="booking.html?vehicle-type=bike" class="text-gray-400 hover:text-white transition-colors">Bike Rental</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Corporate Transport</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Airport Transfers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates and offers.
+                    </p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="w-full px-4 py-2 rounded-l-md focus:outline-none text-gray-900">
+                            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-md transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-gray-400 text-sm">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-4 md:pt-8 mt-4 md:mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 RideBook. All rights reserved.
+                    </p>
+                    <div class="flex flex-wrap space-x-4 md:space-x-6 justify-center md:justify-start">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get URL parameters to set vehicle type
+            const urlParams = new URLSearchParams(window.location.search);
+            const vehicleType = urlParams.get('vehicle-type') || 'bus';
+            const vehicleName = urlParams.get('vehicle-name') || 'Luxury Bus';
+            const vehicleIcon = document.getElementById('vehicle-icon');
+            
+            // Set vehicle icon based on vehicle type
+            if (vehicleType === 'car') {
+                vehicleIcon.className = 'fas fa-car text-green-600 text-3xl';
+                document.getElementById('vehicle-details').textContent = '4 Seats • Air Conditioned • Premium';
+                generateCarSeats();
+            } else if (vehicleType === 'bike') {
+                vehicleIcon.className = 'fas fa-motorcycle text-green-600 text-3xl';
+                document.getElementById('vehicle-details').textContent = '1 Seat • Helmet Included • Quick';
+                generateBikeSeats();
+            } else {
+                // Default to bus
+                vehicleIcon.className = 'fas fa-bus text-green-600 text-3xl';
+                document.getElementById('vehicle-details').textContent = '40 Seats • Air Conditioned • WiFi';
+                generateBusSeats();
+            }
+            
+            // Set vehicle name
+            document.getElementById('selected-vehicle-name').textContent = vehicleName;
+            
+            // Get other URL parameters
+            const tripDate = urlParams.get('trip-date') || 'Aug 10, 2023';
+            const tripTime = urlParams.get('trip-time') || '10:00 AM';
+            const fromLocation = urlParams.get('from') || 'New York City';
+            const toLocation = urlParams.get('to') || 'Boston';
+            
+            // Set trip details
+            document.getElementById('trip-datetime').textContent = `${tripDate} at ${tripTime}`;
+            document.getElementById('trip-route').textContent = `${fromLocation} to ${toLocation}`;
+        });
+        
+        // Generate bus seat layout
+        function generateBusSeats() {
+            const seatMap = document.getElementById('seat-map');
+            seatMap.className = 'grid grid-cols-5 gap-3 max-w-md mx-auto overflow-x-auto';
+            seatMap.innerHTML = '';
+            
+            // Random seats to mark as booked
+            const bookedSeats = [3, 7, 12, 18, 23, 25, 30, 38];
+            // Accessible seats
+            const accessibleSeats = [9, 10];
+            
+            // Generate 40 seats (8 rows of 5 seats each)
+            for (let i = 1; i <= 40; i++) {
+                const seatDiv = document.createElement('div');
+                
+                if (bookedSeats.includes(i)) {
+                    // Booked seat
+                    seatDiv.className = 'w-12 h-12 rounded-md bg-gray-200 flex items-center justify-center text-gray-400 cursor-not-allowed';
+                    seatDiv.innerHTML = i;
+                } else if (accessibleSeats.includes(i)) {
+                    // Accessible seat
+                    seatDiv.className = 'w-12 h-12 rounded-md bg-gray-100 border border-gray-300 flex items-center justify-center cursor-pointer seat-selectable';
+                    seatDiv.dataset.seatNumber = i;
+                    seatDiv.dataset.seatType = 'Accessible';
+                    seatDiv.dataset.seatPrice = '25.00';
+                    seatDiv.innerHTML = `<i class="fas fa-wheelchair"></i>`;
+                    seatDiv.addEventListener('click', selectSeat);
+                } else {
+                    // Available seat
+                    seatDiv.className = 'min-w-12 min-h-12 w-12 h-12 rounded-md border border-gray-300 flex items-center justify-center cursor-pointer hover:border-green-500 hover:bg-green-50 seat-selectable flex-shrink-0';
+                    seatDiv.dataset.seatNumber = i;
+                    seatDiv.dataset.seatType = 'Standard';
+                    seatDiv.dataset.seatPrice = '20.00';
+                    seatDiv.innerHTML = i;
+                    seatDiv.addEventListener('click', selectSeat);
+                }
+                
+                // Add a gap in the middle (aisle)
+                if (i % 5 === 3) {
+                    seatDiv.classList.add('0');
+                }
+                
+                seatMap.appendChild(seatDiv);
+            }
+        }
+        
+        // Generate car seat layout
+        function generateCarSeats() {
+            const seatMap = document.getElementById('seat-map');
+            seatMap.className = 'grid grid-cols-2 gap-6 max-w-md mx-auto';
+            seatMap.innerHTML = '';
+            
+            // Generate 4 seats (2 front, 2 back)
+            const seatLabels = ['Driver', 'Passenger', 'Rear Left', 'Rear Right'];
+            const seatTypes = ['Reserved', 'Standard', 'Standard', 'Standard'];
+            const seatPrices = ['0.00', '15.00', '12.00', '12.00'];
+            const isDisabled = [true, false, false, false];
+            
+            for (let i = 0; i < 4; i++) {
+                const seatDiv = document.createElement('div');
+                
+                if (isDisabled[i]) {
+                    // Driver seat (disabled)
+                    seatDiv.className = 'w-20 h-20 rounded-md bg-gray-200 flex flex-col items-center justify-center text-gray-400 cursor-not-allowed m-auto';
+                    seatDiv.innerHTML = `<i class="fas fa-user text-xl mb-1"></i><span class="text-xs">${seatLabels[i]}</span>`;
+                } else {
+                    // Available passenger seat
+                    seatDiv.className = 'w-20 h-20 rounded-md border border-gray-300 flex flex-col items-center justify-center cursor-pointer m-auto hover:border-green-500 hover:bg-green-50 seat-selectable';
+                    seatDiv.dataset.seatNumber = i + 1;
+                    seatDiv.dataset.seatType = seatTypes[i];
+                    seatDiv.dataset.seatPrice = seatPrices[i];
+                    seatDiv.dataset.seatLabel = seatLabels[i];
+                    seatDiv.innerHTML = `<i class="fas fa-user text-xl mb-1"></i><span class="text-xs">${seatLabels[i]}</span>`;
+                    seatDiv.addEventListener('click', selectSeat);
+                }
+                
+                seatMap.appendChild(seatDiv);
+            }
+        }
+        
+        // Generate bike seat layout
+        function generateBikeSeats() {
+            const seatMap = document.getElementById('seat-map');
+            seatMap.className = 'flex justify-center';
+            seatMap.innerHTML = '';
+            
+            // Generate single bike seat
+            const seatDiv = document.createElement('div');
+            seatDiv.className = 'w-24 h-24 rounded-md border border-gray-300 flex flex-col items-center justify-center cursor-pointer hover:border-green-500 hover:bg-green-50 seat-selectable';
+            seatDiv.dataset.seatNumber = 1;
+            seatDiv.dataset.seatType = 'Standard';
+            seatDiv.dataset.seatPrice = '10.00';
+            seatDiv.dataset.seatLabel = 'Rider';
+            seatDiv.innerHTML = `<i class="fas fa-motorcycle text-3xl mb-2"></i><span>Rider Seat</span>`;
+            seatDiv.addEventListener('click', selectSeat);
+            
+            seatMap.appendChild(seatDiv);
+        }
+        
+        // Selected seats store
+        const selectedSeats = new Map();
+        
+        // Handle seat selection
+        function selectSeat(event) {
+            const seatElement = event.currentTarget;
+            const seatNumber = seatElement.dataset.seatNumber;
+            const seatType = seatElement.dataset.seatType;
+            const seatPrice = parseFloat(seatElement.dataset.seatPrice);
+            const seatLabel = seatElement.dataset.seatLabel || `Seat ${seatNumber}`;
+            
+            if (seatElement.classList.contains('bg-green-100')) {
+                // Seat is already selected, deselect it
+                seatElement.classList.remove('bg-green-100', 'border-green-500', 'text-green-600');
+                seatElement.classList.add('border-gray-300');
+                if (seatElement.querySelector('.fa-check')) {
+                    seatElement.innerHTML = seatNumber;
+                }
+                
+                // Remove from selected seats
+                selectedSeats.delete(seatNumber);
+            } else {
+                // Select the seat
+                seatElement.classList.remove('border-gray-300');
+                seatElement.classList.add('bg-green-100', 'border-green-500', 'text-green-600');
+                
+                // If it's not an icon seat, replace the number with a checkmark
+                if (!seatElement.querySelector('i')) {
+                    seatElement.innerHTML = '<i class="fas fa-check"></i>';
+                }
+                
+                // Add to selected seats
+                selectedSeats.set(seatNumber, { seatNumber, seatType, seatPrice, seatLabel });
+            }
+            
+            updateSelectedSeatsTable();
+        }
+        
+        // Update the selected seats table
+        function updateSelectedSeatsTable() {
+            const selectedSeatsTable = document.getElementById('selected-seats-table');
+            const noSeatsMessage = document.getElementById('no-seats-message');
+            const selectedSeatsContainer = document.getElementById('selected-seats-container');
+            const proceedButton = document.getElementById('proceed-to-payment');
+            
+            if (selectedSeats.size === 0) {
+                // No seats selected
+                noSeatsMessage.classList.remove('hidden');
+                selectedSeatsContainer.classList.add('hidden');
+                proceedButton.disabled = true;
+                proceedButton.classList.add('opacity-50', 'cursor-not-allowed');
+                return;
+            }
+            
+            // Show the table and enable the proceed button
+            noSeatsMessage.classList.add('hidden');
+            selectedSeatsContainer.classList.remove('hidden');
+            proceedButton.disabled = false;
+            proceedButton.classList.remove('opacity-50', 'cursor-not-allowed');
+            
+            // Clear the table
+            selectedSeatsTable.innerHTML = '';
+            
+            // Calculate total price
+            let totalPrice = 0;
+            
+            // Add each selected seat to the table
+            selectedSeats.forEach((seat) => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-200';
+                
+                row.innerHTML = `
+                    <td class="py-3 px-4 text-gray-900">${seat.seatLabel}</td>
+                    <td class="py-3 px-4 text-gray-900">${seat.seatType}</td>
+                    <td class="py-3 px-4 text-gray-900">$${seat.seatPrice.toFixed(2)}</td>
+                    <td class="py-3 px-4">
+                        <button class="text-red-600 hover:text-red-800 transition-colors focus:outline-none" onclick="removeSeat('${seat.seatNumber}')">
+                            <i class="fas fa-times"></i> Remove
+                        </button>
+                    </td>
+                `;
+                
+                selectedSeatsTable.appendChild(row);
+                totalPrice += seat.seatPrice;
+            });
+            
+            // Update total price
+            document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+        }
+        
+        // Remove a seat from selection
+        function removeSeat(seatNumber) {
+            // Find the seat element
+            const seatElements = document.querySelectorAll('.seat-selectable');
+            let seatElement = null;
+            
+            for (const el of seatElements) {
+                if (el.dataset.seatNumber === seatNumber) {
+                    seatElement = el;
+                    break;
+                }
+            }
+            
+            if (seatElement) {
+                // Deselect the seat
+                seatElement.classList.remove('bg-green-100', 'border-green-500', 'text-green-600');
+                seatElement.classList.add('border-gray-300');
+                
+                // Restore the seat number
+                if (!seatElement.querySelector('.fa-wheelchair') && !seatElement.querySelector('.fa-motorcycle') && !seatElement.querySelector('.fa-user')) {
+                    seatElement.innerHTML = seatNumber;
+                }
+            }
+            
+            // Remove from selected seats
+            selectedSeats.delete(seatNumber);
+            
+            // Update the table
+            updateSelectedSeatsTable();
+        }
+        
+        // Proceed to payment
+        function proceedToPayment() {
+            // Store selected seats in session storage for use in payment page
+            const seatsArray = Array.from(selectedSeats.values());
+            sessionStorage.setItem('selectedSeats', JSON.stringify(seatsArray));
+            
+            // Calculate total price
+            let totalPrice = 0;
+            seatsArray.forEach(seat => totalPrice += seat.seatPrice);
+            sessionStorage.setItem('totalPrice', totalPrice.toFixed(2));
+            
+            // Store vehicle and trip information
+            const vehicleName = document.getElementById('selected-vehicle-name').textContent;
+            const vehicleDetails = document.getElementById('vehicle-details').textContent;
+            const tripDatetime = document.getElementById('trip-datetime').textContent;
+            const tripRoute = document.getElementById('trip-route').textContent;
+            
+            sessionStorage.setItem('vehicleName', vehicleName);
+            sessionStorage.setItem('vehicleDetails', vehicleDetails);
+            sessionStorage.setItem('tripDatetime', tripDatetime);
+            sessionStorage.setItem('tripRoute', tripRoute);
+            
+            // Redirect to payment page
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>

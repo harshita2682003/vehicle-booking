@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Vehicle Booking Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center logo-col">
+                    <h1>
+                    <a href="index.html" class="flex items-center logo-image">
+                       <img src="assets/images/logo.png" alt="RideBook Logo">
+                    </a>
+                </h1>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-green-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Book Now Button (Desktop) -->
+                <div class="hidden lg:block">
+                    <a href="booking.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-colors">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation (Hidden by default) -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                    <a href="booking.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-colors text-center">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+
+   <!-- Booking Process Header -->
+   <section class="bg-green-600 py-10 lg:py-20">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col items-center mb-6 md:mb-8">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 text-white">Book Your Perfect Ride</h2>
+            <p class="max-w-xl text-center text-white">
+                Follow our simple booking process to find and secure the ideal vehicle for your needs.
+            </p>
+        </div>
+        
+        <!-- Booking Steps Progress -->
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col items-center">
+                    <div id="step-1-circle" class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2">1</div>
+                    <span class="text-sm font-medium text-white">Search</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block">
+                    <div class="h-full bg-green-500 w-0"></div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div id="step-2-circle" class="w-8 h-8 md:w-10 md:h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-2">2</div>
+                    <span class="text-sm font-medium text-white">Select</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2 hidden md:block">
+                    <div class="h-full bg-green-500 w-0"></div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div id="step-3-circle" class="w-8 h-8 md:w-10 md:h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-2">3</div>
+                    <span class="text-sm font-medium text-white">Pay</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2 hidden md:block">
+                    <div class="h-full bg-green-500 w-0"></div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div id="step-4-circle" class="w-8 h-8 md:w-10 md:h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-2">4</div>
+                    <span class="text-sm font-medium text-white">Confirm</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Step 1: Search Form -->
+    <section id="search-form" class="py-10 lg:py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col items-center mb-6 md:mb-8">
+                    <div class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase">
+                        Reliable Rides
+                    </div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2">Find Your Perfect Ride</h2>
+                    <div class="w-24 h-1 bg-green-500 rounded mb-4 lg:mb-6"></div>
+                    <p class="text-gray-600 max-w-xl text-center">Enter your journey details to discover available vehicles</p>
+                </div>
+                
+                <div class="bg-white rounded-xl px-4 py-6 md:p-6 lg:p-8 shadow-lg">
+                    <form id="booking-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                            <div>
+                                <label for="pickup-location" class="block text-gray-700 font-medium mb-2">From</label>
+                                <div class="relative">
+                                    <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="text" id="pickup-location" name="pickup-location" placeholder="City or Airport" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="destination" class="block text-gray-700 font-medium mb-2">To</label>
+                                <div class="relative">
+                                    <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="text" id="destination" name="destination" placeholder="City or Airport" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                            <div>
+                                <label for="trip-date" class="block text-gray-700 font-medium mb-2">Date</label>
+                                <div class="relative">
+                                    <i class="fas fa-calendar absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="date" id="date" name="date" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                 </div>
+                            </div>
+                            
+                            <div>
+                                <label for="trip-time" class="block text-gray-700 font-medium mb-2">Time</label>
+                                <div class="relative">
+                                    <i class="fas fa-clock absolute left-3 top-3 text-gray-400"></i>
+                                    <input type="time" id="pickup-time" name="pickup-time" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                            <div>
+                                <label for="passengers" class="block text-gray-700 font-medium mb-2">Passengers</label>
+                                <div class="relative">
+                                    <i class="fas fa-user-friends absolute left-3 top-3 text-gray-400"></i>
+                                    <select id="passengers" name="passengers" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none">
+                                        <option value="1">1 Passenger</option>
+                                        <option value="2">2 Passengers</option>
+                                        <option value="3">3 Passengers</option>
+                                        <option value="4">4 Passengers</option>
+                                        <option value="5">5+ Passengers</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="vehicle-type" class="block text-gray-700 font-medium mb-2">Vehicle Type</label>
+                                <div class="relative">
+                                    <i class="fas fa-car absolute left-3 top-3 text-gray-400"></i>
+                                    <select id="vehicle-type" name="vehicle-type" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none">
+                                        <option value="">All Vehicle Types</option>
+                                        <option value="car">Car</option>
+                                        <option value="bus">Bus</option>
+                                        <option value="bike">Bike</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2">
+                            <button type="button" onclick="showVehicleResults()" class="w-full btn rounded-full transition-all">
+                                Search Available Vehicles
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Step 2: Vehicle Results (Hidden initially) -->
+    <section id="vehicle-results" class="py-10 lg:py-20 hidden">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <!-- Header with Search Details -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 lg:mb-12 bg-white p-4 lg:p-6 rounded-lg shadow-md">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-green-600 mb-3">Available Vehicles</h2>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt text-gray-800 mr-2"></i>
+                                <span id="search-from" class="font-medium">New York</span>
+                                <i class="fas fa-long-arrow-alt-right mx-2 text-gray-400"></i>
+                                <span id="search-to" class="font-medium">Boston</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-calendar text-gray-800 mr-2"></i>
+                                <span id="search-date" class="font-medium">Aug 10, 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="showSearchForm()" class="mt-4 md:mt-0 inline-flex items-center text-gray-800 hover:text-green-600 font-medium transition-colors gap-3">
+                        <i class="fas fa-edit"></i> Modify Search
+                    </button>
+                </div>
+             
+                <!-- Vehicle Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-16">
+                    <!-- Vehicle Card 1 - Standard Sedan -->
+                    <div class="relative">
+                        <div class="group bg-white shadow-xl rounded-xl overflow-hidden transition-transform hover:-translate-y-1 duration-300">
+                            <!-- Popular Badge -->
+                            <div class="absolute top-0 right-0 z-10 rounded-tr-lg overflow-hidden">
+                                <div class="bg-green-600 text-white text-xs font-bold py-1 px-4 uppercase tracking-wider">
+                                    Most Popular
+                                </div>
+                            </div>
+                            
+                            <!-- Card Content -->
+                            <div class="p-0">
+                                <!-- Vehicle Header -->
+                                <div class="flex items-center pt-8 md:pt-8 p-4 md:p-6 border-b border-gray-200 flex-col md:flex-row gap-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-16 h-16 md:w-20 md:h-20 bg-green-50 rounded-lg flex items-center justify-center border-2 border-green-600">
+                                            <i class="fas fa-car text-green-600 text-2xl md:text-3xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:flex-1">
+                                        <div class="flex flex-wrap gap-3 justify-between">
+                                            <h3 class="text-xl font-bold text-gray-900">Standard Sedan</h3>
+                                            <div class="flex items-center">
+                                                <div class="text-yellow-500 mr-1">
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div>
+                                                    <span class="font-medium text-gray-800">4.5</span>
+                                                    <span class="text-xs text-gray-500">(120)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 mt-1 mb-3">Comfortable sedan perfect for city driving and small groups.</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">Automatic</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">A/C</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">Bluetooth</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Vehicle Details Grid -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-b border-gray-200">
+                                    <div class="p-4 md:border-r border-gray-200">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-user-friends text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Passengers</div>
+                                                <div class="font-medium text-gray-800">4 People</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t md:border-t-0">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-suitcase text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Luggage</div>
+                                                <div class="font-medium text-gray-800">2 Large Bags</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 md:border-r border-gray-200 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-gas-pump text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Efficiency</div>
+                                                <div class="font-medium text-gray-800">35 MPG</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-road text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Mileage</div>
+                                                <div class="font-medium text-gray-800">Unlimited</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Footer with Price and Action -->
+                                <div class="flex items-center justify-between p-4 md:p-6">
+                                    <div>
+                                        <div class="flex items-baseline">
+                                            <span class="text-2xl lg:text-3xl font-medium text-gray-900">$45</span>
+                                            <span class="text-gray-600 ml-1">/day</span>
+                                        </div>
+                                        <div class="text-sm text-gray-600">Free cancellation</div>
+                                    </div>
+                                    
+                                    <button onclick="selectVehicle('Standard Sedan')" class="btn rounded-full transition-all">
+                                        Select <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle Card 2 - Luxury SUV -->
+                    <div class="relative">
+                        <div class="group bg-white shadow-xl rounded-xl overflow-hidden transition-transform hover:-translate-y-1 duration-300">
+                            <!-- Premium Badge -->
+                            <div class="absolute top-0 right-0 z-10 rounded-tr-lg overflow-hidden">
+                                <div class="bg-green-600 text-white text-xs font-bold py-1 px-4 uppercase tracking-wider">
+                                    Premium
+                                </div>
+                            </div>
+                            
+                            <!-- Card Content -->
+                            <div class="p-0">
+                                <!-- Vehicle Header -->
+                                <div class="flex items-center pt-8 md:pt-8 p-4 md:p-6 border-b border-gray-200 flex-col md:flex-row gap-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-16 h-16 md:w-20 md:h-20 bg-green-50 rounded-lg flex items-center justify-center border-2 border-green-600">
+                                            <i class="fas fa-truck-monster text-green-600 text-3xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:flex-1">
+                                        <div class="flex flex-wrap gap-3 justify-between">
+                                            <h3 class="text-xl font-bold text-gray-900">Luxury SUV</h3>
+                                            <div class="flex items-center">
+                                                <div class="text-yellow-500 mr-1">
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div>
+                                                    <span class="font-medium text-gray-800">5.0</span>
+                                                    <span class="text-xs text-gray-500">(89)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 mt-1 mb-3">Premium SUV offering superior comfort and performance for family trips.</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">4x4</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">Leather Seats</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">Premium Audio</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Vehicle Details Grid -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-b border-gray-200">
+                                    <div class="p-4 md:border-r border-gray-200">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-user-friends text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Capacity</div>
+                                                <div class="font-medium text-gray-800">7 People</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t md:border-t-0">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-suitcase text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Luggage</div>
+                                                <div class="font-medium text-gray-800">4 Large Bags</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 md:border-r border-gray-200 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-mountain text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Terrain</div>
+                                                <div class="font-medium text-gray-800">All Terrain</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-snowflake text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Climate</div>
+                                                <div class="font-medium text-gray-800">Dual Zone</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Footer with Price and Action -->
+                                <div class="flex items-center justify-between p-4 md:p-6">
+                                    <div>
+                                        <div class="flex items-baseline">
+                                            <span class="text-2xl lg:text-3xl font-medium text-gray-900">$89</span>
+                                            <span class="text-gray-600 ml-1">/day</span>
+                                        </div>
+                                        <div class="text-sm text-gray-600">Free cancellation</div>
+                                    </div>
+                                    
+                                    <button onclick="selectVehicle('Luxury SUV')" class="btn rounded-full transition-all">
+                                        Select <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle Card 3 - Luxury Bus -->
+                    <div class="relative">
+                        <div class="group bg-white shadow-xl rounded-xl overflow-hidden transition-transform hover:-translate-y-1 duration-300">
+                            <!-- Group Travel Badge -->
+                            <div class="absolute top-0 right-0 z-10 rounded-tr-lg overflow-hidden">
+                                <div class="bg-green-600 text-white text-xs font-bold py-1 px-4 uppercase tracking-wider">
+                                    Group Travel
+                                </div>
+                            </div>
+                            
+                            <!-- Card Content -->
+                            <div class="p-0">
+                                <!-- Vehicle Header -->
+                                <div class="flex items-center pt-8 md:pt-8 p-4 md:p-6 border-b border-gray-200 flex-col md:flex-row gap-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-16 h-16 md:w-20 md:h-20 bg-green-50 rounded-lg flex items-center justify-center border-2 border-green-600">
+                                            <i class="fas fa-bus text-green-600 text-2xl md:text-3xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:flex-1">
+                                        <div class="flex justify-between">
+                                            <h3 class="text-xl font-bold text-gray-900">Luxury Bus</h3>
+                                            <div class="flex items-center">
+                                                <div class="text-yellow-500 mr-1">
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div>
+                                                    <span class="font-medium text-gray-800">4.9</span>
+                                                    <span class="text-xs text-gray-500">(56)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 mt-1 mb-3">Luxury coach with professional driver, ideal for group tours and events.</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">40 Seats</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">Onboard Restroom</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">WiFi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Vehicle Details Grid -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-b border-gray-200">
+                                    <div class="p-4 md:border-r border-gray-200">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-user-friends text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Capacity</div>
+                                                <div class="font-medium text-gray-800">40 People</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t md:border-t-0">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-wifi text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Connectivity</div>
+                                                <div class="font-medium text-gray-800">Free WiFi</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 md:border-r border-gray-200 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-snowflake text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Climate</div>
+                                                <div class="font-medium text-gray-800">Air Conditioned</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-couch text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Comfort</div>
+                                                <div class="font-medium text-gray-800">Reclining Seats</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Footer with Price and Action -->
+                                <div class="flex items-center justify-between p-4 md:p-6">
+                                    <div>
+                                        <div class="flex items-baseline">
+                                            <span class="text-2xl lg:text-3xl font-medium text-gray-900">$120</span>
+                                            <span class="text-gray-600 ml-1">/day</span>
+                                        </div>
+                                        <div class="text-sm text-gray-600">Driver included</div>
+                                    </div>
+                                    
+                                    <button onclick="selectVehicle('Luxury Bus')" class="btn rounded-full transition-all">
+                                        Select <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vehicle Card 4 - Economy Bike -->
+                    <div class="relative">
+                        <div class="group bg-white shadow-xl rounded-xl overflow-hidden transition-transform hover:-translate-y-1 duration-300">
+                            <!-- Eco Badge -->
+                            <div class="absolute top-0 right-0 z-10 rounded-tr-lg overflow-hidden">
+                                <div class="bg-green-600 text-white text-xs font-bold py-1 px-4 uppercase tracking-wider">
+                                    Eco-Friendly
+                                </div>
+                            </div>
+                            
+                            <!-- Card Content -->
+                            <div class="p-0">
+                                <!-- Vehicle Header -->
+                                <div class="flex items-center pt-6 md:pt-8 p-4 md:p-6 border-b border-gray-200 flex-col md:flex-row gap-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-16 h-16 md:w-20 md:h-20 bg-green-50 rounded-lg flex items-center justify-center border-2 border-green-600">
+                                            <i class="fas fa-bicycle text-green-600 text-2xl md:text-3xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:flex-1">
+                                        <div class="flex flex-wrap gap-3 justify-between">
+                                            <h3 class="text-xl font-bold text-gray-900">Economy Bike</h3>
+                                            <div class="flex items-center">
+                                                <div class="text-yellow-500 mr-1">
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <div>
+                                                    <span class="font-medium text-gray-800">4.7</span>
+                                                    <span class="text-xs text-gray-500">(42)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-600 mt-1 mb-3">Economical and eco-friendly way to explore the city at your own pace.</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">City Cruiser</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">Basket</span>
+                                            <span class="inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800">Helmet</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Vehicle Details Grid -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-b border-gray-200">
+                                    <div class="p-4 md:border-r border-gray-200">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-user text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Capacity</div>
+                                                <div class="font-medium text-gray-800">1 Person</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t md:border-t-0">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-weight text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Weight</div>
+                                                <div class="font-medium text-gray-800">Light (24 lbs)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 md:border-r border-gray-200 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-tachometer-alt text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Speeds</div>
+                                                <div class="font-medium text-gray-800">7 Speed</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 border-t">
+                                        <div class="flex items-center flex-wrap gap-3">
+                                            <div class="w-8 h-8 md:w-10 md:h-10 bg-green-50 text-white flex items-center justify-center rounded-lg flex-shrink-0">
+                                                <i class="fas fa-lock text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-gray-500">Security</div>
+                                                <div class="font-medium text-gray-800">Lock Included</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Footer with Price and Action -->
+                                <div class="flex items-center justify-between p-4 md:p-6">
+                                    <div>
+                                        <div class="flex items-baseline">
+                                            <span class="text-2xl lg:text-3xl font-medium text-gray-900">$15</span>
+                                            <span class="text-gray-600 ml-1">/day</span>
+                                        </div>
+                                        <div class="text-sm text-gray-600">Free cancellation</div>
+                                    </div>
+                                    
+                                    <button onclick="selectVehicle('Economy Bike')" class="btn rounded-full transition-all">
+                                        Select <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Load More -->
+                <div class="text-center">
+                    <button class="btn btn-transparent rounded-full transition-all">
+                        Load More Vehicles <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <!-- Footer -->
+   <footer class="bg-gray-900 text-white pt-10 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 md:gap-8 mb-8 md:mb-10 lg:mb-12">
+            <div>
+                <a href="index.html" class="flex items-center mb-6 footer-logo-img">
+                    <img src="assets/images/footer-logo.png" alt="RideBook Logo">
+                </a>
+                <p class="text-gray-400 mb-4 lg:mb-6">
+                    Premium vehicle booking service with a wide range of options to match your needs.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-4 lg:mb-6">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                    <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                    <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-4 lg:mb-6">Our Services</h3>
+                <ul class="space-y-3">
+                    <li><a href="booking.html?vehicle-type=car" class="text-gray-400 hover:text-white transition-colors">Car Rental</a></li>
+                    <li><a href="booking.html?vehicle-type=bus" class="text-gray-400 hover:text-white transition-colors">Bus Booking</a></li>
+                    <li><a href="booking.html?vehicle-type=bike" class="text-gray-400 hover:text-white transition-colors">Bike Rental</a></li>
+                    <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Corporate Transport</a></li>
+                    <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Airport Transfers</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-4 lg:mb-6">Newsletter</h3>
+                <p class="text-gray-400 mb-4">
+                    Subscribe to our newsletter for the latest updates and offers.
+                </p>
+                <form class="mb-4">
+                    <div class="flex">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-2 rounded-l-md focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-md transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <p class="text-gray-400 text-sm">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-4 md:pt-8 mt-4 md:mt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 RideBook. All rights reserved.
+                </p>
+                <div class="flex flex-wrap space-x-4 md:space-x-6 justify-center md:justify-start">
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

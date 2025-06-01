@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Vehicle Booking Service</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center logo-col">
+                    <h1>
+                        <a href="index.html" class="flex items-center logo-image">
+                            <img src="assets/images/logo.png" alt="RideBook Logo">
+                        </a>
+                    </h1>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-green-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials"
+                        class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Book Now Button (Desktop) -->
+                <div class="hidden lg:block">
+                    <a href="booking.html"
+                        class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-colors">Book
+                        Now</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation (Hidden by default) -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials"
+                        class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                    <a href="booking.html"
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-colors text-center">Book
+                        Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Animation -->
+
+    <section class="hero-section">
+        <div class="mx-auto">
+            <div class="hero-banner-inner relative">
+                <img src="assets/images/hero-image.jpeg" alt=""
+                    class="w-full h-full object-cover absolute top-0 left-0">
+                <div
+                    class="banner-content-wrapper relative m-auto py-8 px-4 md:p-10 lg:p-14 flex flex-col justify-between gap-6 md:gap-10 lg:gap-12">
+                    <div class="hero-banner-content relative mx-auto">
+                        <h2
+                            class="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight text-gray-900 mb-4 text-center">
+                            Book Your
+                            Perfect Ride in Minutes
+                        </h2>
+                        <p class="text-gray-600 mb-4 lg:mb-6 text-center">
+                            Experience seamless vehicle booking with our premium service. Choose from a wide range of
+                            options to suit your travel needs.
+                        </p>
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <a href="booking.html" class="rounded-full transition-all btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <div
+                        class="w-full md:max-w-5xl mx-auto bg-white rounded-xl shadow-xl p-4 md:p-6 lg:p-8 border border-gray-100">
+
+                        <form action="booking.html" method="get"
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 banner-booking-form">
+                            <div>
+                                <label for="location" class="block text-gray-700 font-medium mb-2">From</label>
+                                <div class="relative">
+                                    <input type="text" id="location" name="location" placeholder="Enter pickup location"
+                                        class="w-full  px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="destination" class="block text-gray-700 font-medium mb-2">To</label>
+                                <div class="relative">
+                                    <input type="text" id="destination" name="destination"
+                                        placeholder="Enter destination"
+                                        class="w-full  px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="date" class="block text-gray-700 font-medium mb-2">Pickup Date</label>
+                                <div class="relative">
+                                    <input type="date" id="date" name="date"
+                                        class="w-full  px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="vehicle-type" class="block text-gray-700 font-medium mb-2">Vehicle
+                                    Type</label>
+                                <div class="relative">
+                                    <select id="vehicle-type" name="vehicle-type"
+                                        class="w-full  px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500">
+                                        <option value="">All Vehicle Types</option>
+                                        <option value="car">Car</option>
+                                        <option value="bus">Bus</option>
+                                        <option value="bike">Bike</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="col-span-1 md:col-span-2 lg:col-span-4 text-center mt-1">
+                                <button type="submit" class="rounded-full transition-all btn form-submit-btn">
+                                    <i class="fas fa-search"></i> Search Available Vehicles
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories section -->
+   
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <!-- Section Header -->
+          <div class="flex flex-col items-center mb-6 md:mb-8">
+            <span class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wider">
+              Choose your ride
+            </span>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2">
+              Explore Our Fleet
+            </h2>
+            <div class="w-24 h-1 bg-green-500 rounded mb-4 lg:mb-6"></div>
+            <p class="text-gray-600 max-w-xl text-center">
+              Select from our premium vehicle categories, each offering competitive rates per kilometer
+            </p>
+          </div>
+    
+          <!-- Categories Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
+            <!-- Car Category -->
+            <div class="category-card bg-white rounded-lg shadow-sm  relative">
+                <a href="booking.html" class="category-card-inner flex flex-col p-4 pt-6">
+                    <div class="category-top-content flex-1">
+                <span class="price-tag">₹12/km</span>
+                <div class="icon-wrapper w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-5 mx-auto">
+                    <i class="fas fa-car text-green-600 text-xl md:text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-center mb-2 text-gray-800">Sedan</h3>
+                <p class="text-gray-500 text-sm text-center">Comfort for 4 passengers</p>
+            </div>
+                <div class="flex justify-center mt-3 space-x-1">
+                    <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                    <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                    <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                    <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                    <span class="text-gray-300"><i class="fas fa-star text-sm"></i></span>
+                </div>
+            </a>
+            </div>
+    
+            <!-- Bus Category -->
+            <div class="category-card bg-white rounded-lg shadow-sm relative">
+                <a href="booking.html" class="category-card-inner flex flex-col p-4 pt-6">
+                <div class="category-top-content flex-1">
+                    <span class="price-tag">₹18/km</span>
+                    <div class="icon-wrapper w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-5 mx-auto">
+                        <i class="fas fa-bus text-green-600 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-2 text-gray-800">Bus</h3>
+                    <p class="text-gray-500 text-sm text-center">Group travel solution</p>
+                </div>
+                    <div class="flex justify-center mt-3 space-x-1">
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-gray-300"><i class="fas fa-star text-sm"></i></span>
+                    </div>
+                </a>
+              </div>
+    
+            <!-- Bike Category -->
+            <div class="category-card bg-white rounded-lg shadow-sm relative">
+                <a href="booking.html" class="category-card-inner flex flex-col p-4 pt-6">
+                    <div class="category-top-content flex-1">
+                    <span class="price-tag">₹6/km</span>
+                    <div class="icon-wrapper w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-5 mx-auto">
+                        <i class="fas fa-motorcycle text-green-600 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-2 text-gray-800">Bike</h3>
+                    <p class="text-gray-500 text-sm text-center">Single rider option</p>
+                    </div>
+                    <div class="flex justify-center mt-3 space-x-1">
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-gray-300"><i class="fas fa-star text-sm"></i></span>
+                    </div>
+                </a>
+            </div>
+    
+            <!-- Van Category -->
+            <div class="category-card bg-white rounded-lg shadow-sm relative">
+                <a href="booking.html" class="category-card-inner flex flex-col p-4 pt-6">
+                    <div class="category-top-content flex-1">
+                    <span class="price-tag">₹15/km</span>
+                    <div class="icon-wrapper w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-5 mx-auto">
+                        <i class="fas fa-shuttle-van text-green-600 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-2 text-gray-800">Van</h3>
+                    <p class="text-gray-500 text-sm text-center">Cargo or passenger</p>
+                    </div>
+                    <div class="flex justify-center mt-3 space-x-1">
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-gray-300"><i class="fas fa-star text-sm"></i></span>
+                    </div>
+                </a>
+            </div>
+    
+            <!-- Truck Category -->
+            <div class="category-card bg-white rounded-lg shadow-sm relative">
+                <a href="booking.html" class="category-card-inner flex flex-col p-4 pt-6">
+                    <div class="category-top-content flex-1">
+                    <span class="price-tag">₹22/km</span>
+                    <div class="icon-wrapper w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-5 mx-auto">
+                        <i class="fas fa-truck text-green-600 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-2 text-gray-800">Truck</h3>
+                    <p class="text-gray-500 text-sm text-center">Heavy cargo transport</p>
+                    </div>
+                    <div class="flex justify-center mt-3 space-x-1">
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-gray-300"><i class="fas fa-star text-sm"></i></span>
+                    </div>
+                </a>
+            </div>
+    
+            <!-- SUV Category -->
+            <div class="category-card bg-white rounded-lg shadow-sm relative">
+                <a href="booking.html" class="category-card-inner flex flex-col p-4 pt-6">
+                    <div class="category-top-content flex-1">
+                    <span class="price-tag">₹20/km</span>
+                    <div class="icon-wrapper w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mb-3 md:mb-5 mx-auto">
+                        <i class="fas fa-car-side text-green-600 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-center mb-2 text-gray-800">SUV</h3>
+                    <p class="text-gray-500 text-sm text-center">Premium comfort ride</p>
+                    </div>
+                    <div class="flex justify-center mt-3 space-x-1">
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-yellow-400"><i class="fas fa-star text-sm"></i></span>
+                        <span class="text-gray-300"><i class="fas fa-star text-sm"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    
+          <!-- View All CTA -->
+          <div class="text-center mt-10">
+            <button class="btn rounded-full transition-all">
+              View All Vehicles <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-10 lg:py-20 bg-gray-50 relative overflow-hidden">
+        <div
+            class="absolute bottom-0 right-0 w-48 h-48 lg:w-64 lg:h-64 bg-green-100 rounded-full opacity-50 -mr-24 -mb-24 lg:-mr-32 lg:-mb-32 -z-10 hidden lg:block">
+        </div>
+        <div
+            class="absolute top-0 left-0 w-48 h-48 lg:w-64 lg:h-64 bg-green-100 rounded-full opacity-50 -ml-24 -mt-24 lg:-ml-32 lg:-mt-32 -z-10 hidden lg:block">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
+                <div class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">
+                    OUR SERVICES
+                </div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2">
+                    Vehicle Options for Every Journey
+                </h2>
+                <div class="w-24 h-1 bg-green-500 rounded mb-4 lg:mb-6"></div>
+                <p class="text-gray-600 max-w-xl text-center">
+                    We offer a wide range of vehicle booking options to match your specific needs and preferences.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Service Card 1 -->
+                <div
+                    class="flex flex-col group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-green-500 border-2 border-transparent">
+                    <div class="relative overflow-hidden flex-shrink-0">
+                        <div class="h-48 bg-green-100 flex items-center justify-center ">
+                            <img src="assets/images/services-image.jpg" alt="Car Rental" class="">
+                        </div>
+
+                        <div
+                            class="absolute top-4 left-4 bg-green-600 text-white rounded-lg px-3 py-1 font-bold shadow-md ">
+                            $32/day
+                        </div>
+                    </div>
+                    <div class="p-4 flex flex-col h-full">
+                        <div class="service-top-content flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Car Rental</h3>
+                            <p class="text-gray-600 mb-4">
+                                Choose from our premium selection of cars for your daily commute or special occasions.
+                                From economy compacts to luxury SUVs.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">4+ Passengers</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Air Conditioned</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">GPS Navigation</span>
+                            </div>
+                        </div>
+                        <a href="booking.html?vehicle-type=car"
+                            class="inline-flex items-center text-green-600 font-medium hover:text-green-700 group-hover:underline">
+                            Book a Car
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="flex flex-col group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-green-500 border-2 border-transparent">
+                    <div class="relative overflow-hidden flex-shrink-0">
+                        <div class="h-48 bg-green-100 flex items-center justify-center">
+                            <img src="assets/images/services-image-2.jpg" alt="Bus Booking" class="">
+                        </div>
+
+                        <div
+                            class="absolute top-4 left-4 bg-green-600 text-white rounded-lg px-3 py-1 font-bold shadow-md">
+                            $120/day
+                        </div>
+                    </div>
+                    <div class="p-4 flex flex-col h-full">
+                        <div class="service-top-content flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Bus Booking</h3>
+                            <p class="text-gray-600 mb-4">
+                                Perfect for group travel, events, or corporate transportation needs with professional
+                                drivers and comfortable seating.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">40+ Passengers</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Free WiFi</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Premium Audio</span>
+                            </div>
+                        </div>
+                        <a href="booking.html?vehicle-type=bus"
+                            class="inline-flex items-center text-green-600 font-medium hover:text-green-700 group-hover:underline">
+                            Book a Bus
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="flex flex-col group bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-green-500 border-2 border-transparent">
+                    <div class="relative overflow-hidden flex-shrink-0">
+                        <div class="h-48 bg-green-100 flex items-center justify-center">
+                            <img src="assets/images/services-image-3.jpg" alt="Bike Rental" class="">
+                        </div>
+
+                        <div
+                            class="absolute top-4 left-4 bg-green-600 text-white rounded-lg px-3 py-1 font-bold shadow-md">
+                            $15/day
+                        </div>
+                    </div>
+                    <div class="p-4 flex flex-col h-full">
+                        <div class="service-top-content flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Bike Rental</h3>
+                            <p class="text-gray-600 mb-4">
+                                Eco-friendly and convenient transport options for short distances and city exploration.
+                                Perfect for urban adventures.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Easy Riding</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Helmet Included</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Eco-Friendly</span>
+                            </div>
+                        </div>
+                        <a href="booking.html?vehicle-type=bike"
+                            class="inline-flex items-center text-green-600 font-medium hover:text-green-700 group-hover:underline">
+                            Book a Bike
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Vehicles Button -->
+            <div class="text-center mt-8 lg:mt-12">
+                <a href="booking.html" class="btn btn-transparent rounded-full transition-all">
+                    View All Vehicle Options
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-10 lg:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
+                <div class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">
+                    WHY CHOOSE US
+                </div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2">
+                    The RideBook Advantage
+                </h2>
+                <div class="w-24 h-1 bg-green-500 rounded mb-4 lg:mb-6"></div>
+                <p class="text-gray-600 max-w-xl text-center">
+                    Our vehicle booking service offers unmatched benefits and features designed to enhance your
+                    experience.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div
+                    class="group flex flex-col group bg-white rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-green-500 p-4 lg:p-6">
+                    <div class="relative">
+                        <div
+                            class="w-12 h-12 lg:w-16 lg:h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-4 lg:mb-6 group-hover:-translate-y-2 transition-transform duration-300 border-2 border-gray-100">
+                            <i class="fas fa-clock text-green-600 text-xl lg:text-2xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-0 right-0 w-8 h-8 bg-green-100 rounded-full -mr-2 -mt-2 group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
+                        Instant Booking</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Book your vehicle in less than 2 minutes with our streamlined process. Our user-friendly
+                        platform ensures quick and hassle-free reservations.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="group flex flex-col group bg-white rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-green-500 p-4 lg:p-6">
+                    <div class="relative">
+                        <div
+                            class="w-12 h-12 lg:w-16 lg:h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-4 lg:mb-6 group-hover:-translate-y-2 transition-transform duration-300 border-2 border-gray-100">
+                            <i class="fas fa-tag text-green-600 text-xl lg:text-2xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-0 right-0 w-8 h-8 bg-green-100 rounded-full -mr-2 -mt-2 group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">Best
+                        Prices</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Competitive rates with no hidden fees or additional charges. We regularly update our pricing to
+                        ensure you get the best value for your money.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="group flex flex-col group bg-white rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-green-500 p-4 lg:p-6">
+                    <div class="relative">
+                        <div
+                            class="w-12 h-12 lg:w-16 lg:h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-4 lg:mb-6 group-hover:-translate-y-2 transition-transform duration-300 border-2 border-gray-100">
+                            <i class="fas fa-shield-alt text-green-600 text-xl lg:text-2xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-0 right-0 w-8 h-8 bg-green-100 rounded-full -mr-2 -mt-2 group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">Secure
+                        Payments</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        All transactions are protected with industry-standard security protocols. Your payment
+                        information is always encrypted and secure.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="group flex flex-col group bg-white rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-green-500 p-4 lg:p-6">
+                    <div class="relative">
+                        <div
+                            class="w-12 h-12 lg:w-16 lg:h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-4 lg:mb-6 group-hover:-translate-y-2 transition-transform duration-300 border-2 border-gray-100">
+                            <i class="fas fa-headset text-green-600 text-xl lg:text-2xl"></i>
+                        </div>
+                        <div
+                            class="absolute top-0 right-0 w-8 h-8 bg-green-100 rounded-full -mr-2 -mt-2 group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">24/7
+                        Support</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Our customer service team is available round the clock to assist you with any questions or
+                        concerns during your booking journey.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature Highlights -->
+            <div class="mt-10 lg:mt-20 bg-gray-50 rounded-xl px-4 py-6 md:p-6 lg:p-10 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Seamless Booking Experience</h3>
+                        <p class="text-gray-600 mb-4 lg:mb-8">
+                            Our intuitive platform makes booking your next ride incredibly simple. With just a few
+                            clicks, you can secure the perfect vehicle for your needs.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700">Personalized recommendations based on your
+                                    preferences</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700">Multiple seat selection for group bookings</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700">Flexible booking options with free cancellations</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700">Digital tickets for contactless journey</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-right-col">
+                        <div class="about-right-inner relative">
+                            <div class="about-image">
+                                <img src="assets/images/about-features-img.jpg" alt="about-image" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-10 lg:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2">Customer Reviews</h2>
+                <p class="text-gray-600 max-w-xl text-center">
+                    Don't just take our word for it. Here's what our customers have to say.
+                </p>
+            </div>
+
+            <div class="testimonials-slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex h-auto">
+                        <div class="bg-white rounded-xl shadow-md p-4 md:p-6 lg:p-8 flex flex-col h-full">
+                            <div class="testimonials-top-content flex-1">
+                                <div class="flex items-center mb-4 ">
+                                    <div class="text-yellow-500  flex">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="ml-2 text-gray-600">5.0</span>
+                                </div>
+                                <p class="text-gray-600 mb-4 lg:mb-6">
+                                    "The booking process was incredibly simple, and the car was exactly as described.
+                                    Great service that I would recommend to anyone looking for reliable vehicle
+                                    rentals."
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                                    <p class="text-gray-600 text-sm">Business Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex h-auto">
+                        <div class="bg-white rounded-xl shadow-md p-4 md:p-6 lg:p-8 flex flex-col h-full">
+                            <div class="testimonials-top-content flex-1">
+                                <div class="flex items-center mb-4 ">
+                                    <div class="text-yellow-500 flex">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="ml-2 text-gray-600">5.0</span>
+                                </div>
+                                <p class="text-gray-600 mb-4 lg:mb-6">
+                                    "The booking process was incredibly simple , and the car was exactly as described.
+                                    Great service that I would recommend to anyone
+                                    looking for reliable vehicle rentals. "
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Michael Smith</h4>
+                                    <p class="text-gray-600 text-sm">Event Coordinator</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide flex h-auto">
+                        <div class="bg-white rounded-xl shadow-md p-4 md:p-6 lg:p-8 flex flex-col h-full">
+                            <div class="testimonials-top-content flex-1">
+                                <div class="flex items-center mb-4 ">
+                                    <div class="text-yellow-500 flex">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="ml-2 text-gray-600">5.0</span>
+                                </div>
+                                <p class="text-gray-600 mb-4 lg:mb-6">
+                                    "The booking process was incredibly simple, and the car was exactly as described.
+                                    Great service that I
+                                    would recommend to anyone looking for reliable vehicle rentals."
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Emily Wang</h4>
+                                    <p class="text-gray-600 text-sm">Tourist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow-wrapper ">
+                    <div class="testimonials-arrow swiper-button-prev position-relative ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M13.2266 5.43579L18.7907 11L13.2266 16.5641" stroke="white" stroke-width="1.5"
+                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M3.20898 11H18.6365" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <div class="testimonials-arrow swiper-button-next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M13.2266 5.43579L18.7907 11L13.2266 16.5641" stroke="white" stroke-width="1.5"
+                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M3.20898 11H18.6365" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10 lg:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col items-center mb-6 md:mb-8">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2">Contact Us</h2>
+                    <p class="text-gray-600 max-w-xl text-center">
+                        Have questions or need assistance? Our team is ready to help you.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Enter your message"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn rounded-full transition-all">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div class="bg-gray-50 p-4 lg:p-8 rounded-xl">
+                            <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
+
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Address</h4>
+                                        <p class="text-gray-600">
+                                            123 Booking Street, Suite 100<br>
+                                            New York, NY 10001
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Phone</h4>
+                                        <p class="text-gray-600">
+                                            +1 (555) 123-4567
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Email</h4>
+                                        <p class="text-gray-600">
+                                            support@ridebook.com
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Hours</h4>
+                                        <p class="text-gray-600">
+                                            Monday - Friday: 9am - 8pm<br>
+                                            Saturday - Sunday: 10am - 6pm
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-10 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 md:gap-8 mb-8 md:mb-10 lg:mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center mb-6 footer-logo-img">
+                        <img src="assets/images/footer-logo.png" alt="RideBook Logo">
+                    </a>
+                    <p class="text-gray-400 mb-4 lg:mb-6">
+                        Premium vehicle booking service with a wide range of options to match your needs.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="javascript:void(0)"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="javascript:void(0)"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="javascript:void(0)"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="booking.html?vehicle-type=car"
+                                class="text-gray-400 hover:text-white transition-colors">Car Rental</a></li>
+                        <li><a href="booking.html?vehicle-type=bus"
+                                class="text-gray-400 hover:text-white transition-colors">Bus Booking</a></li>
+                        <li><a href="booking.html?vehicle-type=bike"
+                                class="text-gray-400 hover:text-white transition-colors">Bike Rental</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="text-gray-400 hover:text-white transition-colors">Corporate Transport</a></li>
+                        <li><a href="javascript:void(0)"
+                                class="text-gray-400 hover:text-white transition-colors">Airport Transfers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates and offers.
+                    </p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full px-4 py-2 rounded-l-md focus:outline-none text-gray-900">
+                            <button type="submit"
+                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-md transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-gray-400 text-sm">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-4 md:pt-8 mt-4 md:mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 RideBook. All rights reserved.
+                    </p>
+                    <div class="flex flex-wrap space-x-4 md:space-x-6 justify-center md:justify-start">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Privacy
+                            Policy</a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Terms of
+                            Service</a>
+                        <a href="javascript:void(0)"
+                            class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

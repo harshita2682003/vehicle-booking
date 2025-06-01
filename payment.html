@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Vehicle Booking Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center logo-col">
+                    <h1>
+                    <a href="index.html" class="flex items-center logo-image">
+                       <img src="assets/images/logo.png" alt="RideBook Logo">
+                    </a>
+                </h1>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-green-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Book Now Button (Desktop) -->
+                <div class="hidden lg:block">
+                    <a href="booking.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-colors">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation (Hidden by default) -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-green-600 font-medium">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-green-600 transition-colors">Services</a>
+                    <a href="#features" class="text-gray-600 hover:text-green-600 transition-colors">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-green-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors">Contact</a>
+                    <a href="booking.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-colors text-center">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Booking Process Header -->
+
+    <section class="bg-green-600 py-10 lg:py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 text-white">Payment</h2>
+                <p class="max-w-xl text-center text-white">
+                    Complete your booking by securely processing your payment.
+                </p>
+            </div>
+            
+            <!-- Booking Steps Progress -->
+            <div class="max-w-4xl mx-auto mt-5 lg:mt-10">
+                <div class="flex items-center justify-between booking-steps-progress">
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            1
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Search</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            2
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Select Vehicle</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            3
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Select Seats</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div id="step-4-circle" class="w-8 h-8 md:w-10 md:h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            4
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Payment</span>
+                    </div>
+                    
+                    <div class="flex-1 h-1 bg-gray-200 mx-2  hidden md:block"></div>
+                    
+                    <div class="flex flex-col items-center booking-steps-item">
+                        <div id="step-5-circle" class="w-8 h-8 md:w-10 md:h-10 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center font-bold mb-2 booking-steps-number">
+                            5
+                        </div>
+                        <span class="mt-2 text-green-100 font-medium">Confirm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Payment Section -->
+    <section class="py-10 lg:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Payment Form -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-md p-4 lg:p-6">
+                            <h2 class="text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">Payment Details</h2>
+                            
+                            <!-- Payment Methods -->
+                            <div class="mb-4 lg:mb-6">
+                                <label class="block text-gray-700 font-medium mb-2">Payment Method</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div class="payment-method-card active bg-white border border-green-500 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50">
+                                        <i class="fab fa-cc-visa text-blue-600 text-3xl mb-2"></i>
+                                        <span class="text-sm font-medium">Credit Card</span>
+                                    </div>
+                                    <div class="payment-method-card bg-white border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50">
+                                        <i class="fab fa-paypal text-blue-800 text-3xl mb-2"></i>
+                                        <span class="text-sm font-medium">PayPal</span>
+                                    </div>
+                                    <div class="payment-method-card bg-white border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50">
+                                        <i class="fas fa-apple-pay text-gray-800 text-3xl mb-2"></i>
+                                        <span class="text-sm font-medium">Apple Pay</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Credit Card Form -->
+                            <form id="payment-form">
+                                <div class="mb-4">
+                                    <label for="card-holder" class="block text-gray-700 font-medium mb-2">Cardholder Name</label>
+                                    <input type="text" id="card-holder" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="John Smith" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="card-number" class="block text-gray-700 font-medium mb-2">Card Number</label>
+                                    <div class="relative">
+                                        <input type="text" id="card-number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="1234 5678 9012 3456" required>
+                                       
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label for="expiry-date" class="block text-gray-700 font-medium mb-2">Expiry Date</label>
+                                        <input type="text" id="expiry-date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="MM/YY" required>
+                                    </div>
+                                    <div>
+                                        <label for="cvv" class="block text-gray-700 font-medium mb-2">CVV</label>
+                                        <input type="text" id="cvv" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="123" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4 lg:mb-6">
+                                    <label for="billing-address" class="block text-gray-700 font-medium mb-2">Billing Address</label>
+                                    <input type="text" id="billing-address" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mb-4" placeholder="Street Address" required>
+                                    
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <input type="text" id="city" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="City" required>
+                                        <input type="text" id="zip-code" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Zip Code" required>
+                                    </div>
+                                </div>
+                                
+                                <!-- Save Payment Info -->
+                                <div class="mb-4 lg:mb-6">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600">
+                                        <span class="ml-2 text-gray-700">Save payment information for future bookings</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="flex items-center justify-between mb-4 lg:mb-6">
+                                    <button type="button" onclick="window.location.href='seat-selection.html'" class="btn btn-transparent rounded-full transition-all">
+                                        <i class="fas fa-arrow-left"></i> Back
+                                    </button>
+                                    <button type="submit" onclick="processPayment(event)" class="btn rounded-full transition-all">
+                                        Pay Now <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="text-center text-sm text-gray-600">
+                                    <p class="flex items-center justify-center">
+                                        <i class="fas fa-lock text-green-600 mr-2"></i>
+                                        All transactions are secure and encrypted
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Summary -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-gray-50 rounded-xl p-4 lg:p-6 shadow-md">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 lg:mb-6">Booking Summary</h3>
+                            
+                            <!-- Vehicle Details -->
+                            <div class="mb-4 lg:mb-6">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                        <i id="summary-vehicle-icon" class="fas fa-bus text-green-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 id="summary-vehicle-name" class="font-bold text-gray-900">Luxury Bus</h4>
+                                        <p id="summary-vehicle-details" class="text-sm text-gray-600">40 Seats • Air Conditioned • WiFi</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-t border-gray-200 pt-4">
+                                    <div class="flex flex-wrap justify-between items-center mb-2 gap-2">
+                                        <span class="text-gray-600">Route:</span>
+                                        <span id="summary-route" class="text-gray-900 font-medium">New York City to Boston</span>
+                                    </div>
+                                    <div class="flex flex-wrap justify-between items-center gap-2">
+                                        <span class="text-gray-600">Date & Time:</span>
+                                        <span id="summary-datetime" class="text-gray-900 font-medium">Aug 10, 2023 at 10:00 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Selected Seats -->
+                            <div class="mb-4 lg:mb-6">
+                                <h4 class="font-bold text-gray-900 mb-3">Selected Seats</h4>
+                                <div id="summary-seats-list" class="space-y-2 max-h-32 overflow-y-auto mb-3">
+                                    <!-- Seat details will be populated by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <!-- Price Details -->
+                            <div class="border-t border-gray-200 pt-4 mb-4">
+                                <h4 class="font-bold text-gray-900 mb-3">Price Details</h4>
+                                <div id="summary-price-breakdown" class="space-y-2 mb-3">
+                                    <!-- Price breakdown will be populated by JavaScript -->
+                                </div>
+                                
+                                <div class="flex justify-between items-center font-bold text-lg border-t border-gray-200 pt-3">
+                                    <span class="text-gray-900">Total:</span>
+                                    <span id="summary-total-price" class="text-green-600">$0.00</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Promo Code -->
+                            <div class="promo-code-wrapper">
+                                <label for="promo-code" class="block text-gray-700 font-medium mb-2">Promo Code</label>
+                                <div class="flex">
+                                    <input type="text" id="promo-code" class="flex-grow max-w-40 w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Enter code">
+                                    <button class="btn transition-all rounded-r-lg hover:translate-y-0">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    
+    <!-- Loading Overlay (hidden by default) -->
+    <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-4 lg:p-8 max-w-md w-full text-center mx-4">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-green-600 border-solid mx-auto mb-4"></div>
+            <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-3">Processing Payment</h3>
+            <p class="text-gray-600">Please wait while we securely process your payment. Do not refresh the page.</p>
+        </div>
+    </div>
+    
+    <!-- Footer Section -->
+   <!-- Footer -->
+   <footer class="bg-gray-900 text-white pt-10 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 md:gap-8 mb-8 md:mb-10 lg:mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center mb-6 footer-logo-img">
+                        <img src="assets/images/footer-logo.png" alt="RideBook Logo">
+                    </a>
+                    <p class="text-gray-400 mb-4 lg:mb-6">
+                        Premium vehicle booking service with a wide range of options to match your needs.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="booking.html?vehicle-type=car" class="text-gray-400 hover:text-white transition-colors">Car Rental</a></li>
+                        <li><a href="booking.html?vehicle-type=bus" class="text-gray-400 hover:text-white transition-colors">Bus Booking</a></li>
+                        <li><a href="booking.html?vehicle-type=bike" class="text-gray-400 hover:text-white transition-colors">Bike Rental</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Corporate Transport</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Airport Transfers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 lg:mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates and offers.
+                    </p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="w-full px-4 py-2 rounded-l-md focus:outline-none text-gray-900">
+                            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-md transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-gray-400 text-sm">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-4 md:pt-8 mt-4 md:mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 RideBook. All rights reserved.
+                    </p>
+                    <div class="flex flex-wrap space-x-4 md:space-x-6 justify-center md:justify-start">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get booking details from session storage
+            const selectedSeats = JSON.parse(sessionStorage.getItem('selectedSeats') || '[]');
+            const totalPrice = parseFloat(sessionStorage.getItem('totalPrice') || '0');
+            const vehicleName = sessionStorage.getItem('vehicleName') || 'Luxury Bus';
+            const vehicleDetails = sessionStorage.getItem('vehicleDetails') || '40 Seats • Air Conditioned • WiFi';
+            const tripDatetime = sessionStorage.getItem('tripDatetime') || 'Aug 10, 2023 at 10:00 AM';
+            const tripRoute = sessionStorage.getItem('tripRoute') || 'New York City to Boston';
+            
+            // If no seats are selected, redirect back to seat selection
+            if (selectedSeats.length === 0) {
+                window.location.href = 'seat-selection.html';
+                return;
+            }
+            
+            // Set vehicle and trip details in summary
+            document.getElementById('summary-vehicle-name').textContent = vehicleName;
+            document.getElementById('summary-vehicle-details').textContent = vehicleDetails;
+            document.getElementById('summary-datetime').textContent = tripDatetime;
+            document.getElementById('summary-route').textContent = tripRoute;
+            
+            // Set vehicle icon based on vehicle name
+            const vehicleIcon = document.getElementById('summary-vehicle-icon');
+            if (vehicleName.toLowerCase().includes('car')) {
+                vehicleIcon.className = 'fas fa-car text-green-600 text-xl';
+            } else if (vehicleName.toLowerCase().includes('bike')) {
+                vehicleIcon.className = 'fas fa-motorcycle text-green-600 text-xl';
+            } else {
+                vehicleIcon.className = 'fas fa-bus text-green-600 text-xl';
+            }
+            
+            // Populate selected seats list
+            const seatsList = document.getElementById('summary-seats-list');
+            seatsList.innerHTML = '';
+            
+            selectedSeats.forEach(seat => {
+                const seatItem = document.createElement('div');
+                seatItem.className = 'flex justify-between items-center';
+                seatItem.innerHTML = `
+                    <span class="text-gray-600">${seat.seatLabel} (${seat.seatType})</span>
+                    <span class="text-gray-900 font-medium">$${seat.seatPrice.toFixed(2)}</span>
+                `;
+                seatsList.appendChild(seatItem);
+            });
+            
+            // Populate price breakdown
+            const priceBreakdown = document.getElementById('summary-price-breakdown');
+            priceBreakdown.innerHTML = '';
+            
+            // Seat subtotal
+            const subtotalItem = document.createElement('div');
+            subtotalItem.className = 'flex justify-between items-center';
+            subtotalItem.innerHTML = `
+                <span class="text-gray-600">Seats (${selectedSeats.length})</span>
+                <span class="text-gray-900">$${totalPrice.toFixed(2)}</span>
+            `;
+            priceBreakdown.appendChild(subtotalItem);
+            
+            // Service fee
+            const serviceFee = 5.00;
+            const serviceFeeItem = document.createElement('div');
+            serviceFeeItem.className = 'flex justify-between items-center';
+            serviceFeeItem.innerHTML = `
+                <span class="text-gray-600">Service Fee</span>
+                <span class="text-gray-900">$${serviceFee.toFixed(2)}</span>
+            `;
+            priceBreakdown.appendChild(serviceFeeItem);
+            
+            // Tax
+            const taxRate = 0.08; // 8% tax
+            const taxAmount = totalPrice * taxRate;
+            const taxItem = document.createElement('div');
+            taxItem.className = 'flex justify-between items-center';
+            taxItem.innerHTML = `
+                <span class="text-gray-600">Tax (8%)</span>
+                <span class="text-gray-900">$${taxAmount.toFixed(2)}</span>
+            `;
+            priceBreakdown.appendChild(taxItem);
+            
+            // Set total price
+            const grandTotal = totalPrice + serviceFee + taxAmount;
+            document.getElementById('summary-total-price').textContent = `$${grandTotal.toFixed(2)}`;
+            
+            // Store the grand total for use in confirmation page
+            sessionStorage.setItem('grandTotal', grandTotal.toFixed(2));
+            
+            // Add click event listeners to payment method cards
+            const paymentCards = document.querySelectorAll('.payment-method-card');
+            paymentCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active class from all cards
+                    paymentCards.forEach(c => {
+                        c.classList.remove('active', 'border-green-500');
+                        c.classList.add('border-gray-200');
+                    });
+                    
+                    // Add active class to clicked card
+                    this.classList.add('active', 'border-green-500');
+                    this.classList.remove('border-gray-200');
+                });
+            });
+        });
+        
+        // Process payment
+        function processPayment(event) {
+            event.preventDefault();
+            
+            // Show loading overlay
+            document.getElementById('loading-overlay').classList.remove('hidden');
+            
+            // Simulate payment processing (would be handled by a payment gateway in a real app)
+            setTimeout(() => {
+                // Generate a booking reference
+                const bookingReference = generateBookingReference();
+                sessionStorage.setItem('bookingReference', bookingReference);
+                
+                // Redirect to confirmation page
+                window.location.href = 'ticket.html';
+            }, 2000);
+        }
+        
+        // Generate a random booking reference
+        function generateBookingReference() {
+            const prefix = 'RB';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let reference = prefix + '-';
+            
+            for (let i = 0; i < 8; i++) {
+                reference += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            
+            return reference;
+        }
+    </script>
+</body>
+</html>
